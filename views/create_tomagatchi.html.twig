@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Tomagatchi List</title>
+</head>
+<body>
+    <h1>Your Tomagatchi</h1>
+    {% if tomagatchis is not empty %}
+        <p></p>
+    <ul>
+        {% for tomagatchi in tomagatchi %}
+            <li>{{ tomagatchi.getName }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+        <form action='/tomagatchi' method='post'>
+          <label for='name'>Add Tomagatchi Name</label>
+          <input id='name' name='name' type='text'>
+
+          <button type='submit'>Submit</button>
+        </form>
+        <form action='/delete_tasks' method='post'>
+          <button type='submit'>delete</button>
+        </form>
+        </body>
+        </html>
