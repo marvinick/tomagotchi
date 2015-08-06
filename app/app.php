@@ -13,7 +13,7 @@
   ));
 
   $app->get("/", function() use ($app) {
-      return $app['twig']->render('tomagatchis.html.twig', array('tomagatchis' => Tomagatchi::getAll())); //array('tomagatchis' => Tomagatchi::getAll()));
+    return $app['twig']->render('tomagatchis.html.twig', array('tomagatchis' => Tomagatchi::getAll()));
   });
 
   $app->post("/tomagatchis", function() use ($app) {

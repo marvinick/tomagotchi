@@ -8,7 +8,7 @@ class Tomagatchi {
     private $happiness;
     private $sleep;
 
-    function __construct($name, $food = 10, $time = 0, $happiness = 10, $sleep = 0){
+    function __construct($name, $food, $time, $happiness, $sleep) {
         $this->name = $name;
         $this->food = $food;
         $this->time = $time;
@@ -56,7 +56,7 @@ class Tomagatchi {
         return $this->sleep;
     }
 
-    function save() {  //saving list to cookie
+    function save() {
       array_push($_SESSION['tomagatchi_data'], $this);
     }
 
