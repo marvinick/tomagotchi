@@ -2,13 +2,13 @@
 
 class Tomagatchi {
 
-    private $name
-    private $food
-    private $time
-    private $happiness
-    private $sleep
+    private $name;
+    private $food;
+    private $time;
+    private $happiness;
+    private $sleep;
 
-    function __construct($name, $food, $time, $happiness, $sleep){
+    function __construct($name, $food = 10, $time = 0, $happiness = 10, $sleep = 0){
         $this->name = $name;
         $this->food = $food;
         $this->time = $time;

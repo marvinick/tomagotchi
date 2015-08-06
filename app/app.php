@@ -13,7 +13,20 @@
   ));
 
   $app->get("/", function() use ($app) {
-      return $app['twig']->render("tomagatchi.html.twig", array('tomagatchis' => Tomagatchi::getAll));
-  })
+      return $app['twig']->render('tomagatchis.html.twig', array('tomagatchis' => Tomagatchi::getAll())); //array('tomagatchis' => Tomagatchi::getAll()));
+  });
 
+  $app->post("/tomagatchis", function() use ($app) {
+    $tomagatchi = new Tomagatchi($_POST['name']);
+    $tomagatchi->save();
+    return $app['twig']->render('create_tomagatchi.html.twig', array('newtomagatchi' => $tomagatchi));
+  });
+
+  $app->post("/delete_tomagatchis", function() use ($app) {
+    Tomagatchi::deleteAll();
+    return $app['twig']->render('delete_tomagatchis.html.twig');
+  });
+
+  return $app;
 ?>
+
